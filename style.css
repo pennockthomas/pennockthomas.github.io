@@ -1,0 +1,284 @@
+/* Palette: deep pine page, with sage / sea / coral paper cards and dark ink. */
+:root {
+  --pine: #1d3b33;
+  --pine-deep: #142a24;
+  --cream: #f2e9d3;
+  --sand: #ebddb9;
+  --coral: #e3795a;
+  --sea: #86bbcb;
+  --sage: #b9d0a5;
+  --ink: #14231f;
+
+  /* System Helvetica: no font download, no licence, no third-party requests. */
+  --font: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  --bar: 64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--bar) + 12px);
+  background: var(--pine);
+}
+
+body {
+  font-family: var(--font);
+  line-height: 1.5;
+  color: var(--cream);
+  background: var(--pine) url("assets/grain.png");
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body.menu-open { overflow: hidden; }
+
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+
+/* ---------- Buttons: outlined, small radius ---------- */
+.btn {
+  display: inline-block;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  padding: 0.62em 1.15em;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  color: inherit;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover { background: var(--ink); color: var(--cream); }
+.btn--ghost { border-style: dashed; }
+.btn--bar { padding: 0.45em 0.95em; font-size: 0.95rem; }
+.btn--bar:hover { background: var(--cream); color: var(--pine-deep); }
+
+/* ---------- Top bar ---------- */
+.bar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: var(--bar);
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background: rgb(20 42 36 / 0.86);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.bar__brand {
+  justify-self: start;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.bar .btn { justify-self: end; }
+
+.bar__menu {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-content: center;
+  gap: 7px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.bar__menu span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.25s;
+}
+.bar__menu[aria-expanded="true"] span:first-child { transform: translateY(5px) rotate(20deg); }
+.bar__menu[aria-expanded="true"] span:last-child { transform: translateY(-5px) rotate(-20deg); }
+
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+  padding: var(--bar) 24px 0;
+  background: var(--pine-deep) url("assets/grain.png");
+}
+.menu[hidden] { display: none; }
+.menu a {
+  font-size: clamp(3rem, 14vw, 6rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.menu a:hover { color: var(--coral); }
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100svh;
+  padding: calc(var(--bar) + 6vh) 20px 7vh;
+  display: grid;
+  align-content: center;
+  gap: 28px;
+}
+.hero__kicker {
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+.hero__title {
+  font-size: clamp(3.4rem, 18vw, 8rem);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+.hero__lede {
+  margin-top: 22px;
+  max-width: 26ch;
+  font-size: clamp(1.15rem, 3.6vw, 1.7rem);
+  line-height: 1.3;
+}
+.hero__cue {
+  display: inline-block;
+  margin-top: 26px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--coral);
+}
+.hero__cue:hover { text-decoration: underline; }
+.hero__art { width: min(100%, 620px); height: auto; justify-self: center; overflow: visible; }
+
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    padding-inline: 6vw;
+  }
+}
+
+/* Paper-cut look: each layer gets a hard offset shadow. */
+.hero__art .paper { filter: drop-shadow(0 6px 0 rgb(0 0 0 / 0.2)); }
+.hero__art .blades { animation: spin 16s linear infinite; }
+.hero__art .turbine--far .blades { animation-duration: 22s; }
+.hero__art .tree { animation: sway 6s ease-in-out infinite; }
+.hero__art .sun { animation: bob 9s ease-in-out infinite; transform-origin: 440px 118px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes sway { 0%, 100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+/* ---------- Project cards: a tilted deck that stacks as you scroll ---------- */
+.stack { padding: 4vh 16px 22vh; }
+
+.card {
+  --bg: var(--sand);
+  position: sticky;
+  top: calc(var(--bar) + 16px + var(--i) * 22px);
+  width: min(100%, 820px);
+  min-height: min(62vh, 520px);
+  margin: 0 auto 24vh;
+  padding: clamp(22px, 5vw, 44px);
+  color: var(--ink);
+  background: var(--bg);
+  border-radius: 14px 40px 14px 40px;
+  transform: rotate(var(--tilt));
+  box-shadow: 0 2px 0 rgb(0 0 0 / 0.2), 0 24px 46px rgb(0 0 0 / 0.38);
+  isolation: isolate;
+}
+.card:last-child { margin-bottom: 0; }
+.card--sage { --bg: var(--sage); }
+.card--sea { --bg: var(--sea); }
+.card--coral { --bg: var(--coral); }
+
+/* Paper grain over the card, below its content. */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: url("assets/grain.png");
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+.card > * { position: relative; z-index: 1; }
+.card .btn:hover { background: var(--ink); color: var(--bg); }
+.card :focus-visible { outline-color: var(--ink); }
+
+.card__art {
+  position: absolute !important;
+  top: clamp(18px, 4vw, 34px);
+  right: clamp(18px, 4vw, 34px);
+  width: clamp(54px, 14vw, 104px);
+  height: auto;
+  pointer-events: none;
+}
+
+.card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  padding-right: clamp(66px, 18vw, 130px);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.pill {
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  padding: 0.05em 0.7em;
+  font-size: 0.74rem;
+}
+
+.card__title {
+  margin: 22px 0 16px;
+  font-size: clamp(2.7rem, 11vw, 6rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+.card__text { max-width: 46ch; font-size: clamp(1rem, 2.6vw, 1.2rem); }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.tags li {
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  padding: 0.12em 0.6em;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.card__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+
+/* ---------- Footer ---------- */
+.foot { padding: 28px 20px 40px; text-align: center; font-size: 0.9rem; color: var(--sage); }
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero__art .blades, .hero__art .tree, .hero__art .sun { animation: none; }
+  .btn, .bar__menu span { transition: none; }
+}
