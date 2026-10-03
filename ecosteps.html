@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoSteps — Thomas Pennock</title>
+  <meta name="description" content="EcoSteps: a Flutter app (iOS and web) for swapping everyday plastic for things that last. How it works and how it was built.">
+  <meta name="theme-color" content="#142A24">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-sage">
+
+<header class="bar">
+  <a class="bar__brand" href="index.html">T.P. ’26</a>
+  <button class="bar__menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span>
+  </button>
+  <a class="btn btn--bar" href="index.html#say-hi">Contact</a>
+</header>
+
+<nav id="menu" class="menu" hidden aria-label="Main">
+  <a href="index.html">Home</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="index.html#say-hi">Say hi</a>
+</nav>
+
+<main>
+  <section class="proj-hero">
+    <p class="proj-hero__kicker"><span>01 · App · iOS &amp; web</span><span class="pill">Live</span></p>
+    <h1 class="proj-hero__title">Eco<br>Steps</h1>
+    <p class="proj-hero__lede">Swap plastic for things that last, one step at a time.</p>
+    <ul class="tags"><li>Flutter</li><li>Dart</li><li>Firebase</li><li>iOS</li><li>Web</li></ul>
+    <div class="card__actions"><a class="btn" href="https://ecosteps.web.app" target="_blank" rel="noopener">Open the app</a><a class="btn btn--ghost" href="https://github.com/pennockthomas/Flutter" target="_blank" rel="noopener">Code</a></div>
+  </section>
+
+  <div class="facts">
+    <div class="fact"><b>118</b><span>swaps to try</span></div>
+    <div class="fact"><b>16</b><span>challenges</span></div>
+    <div class="fact"><b>3</b><span>areas: kitchen, bathroom, on the go</span></div>
+    <div class="fact"><b>39</b><span>automated tests</span></div>
+  </div>
+
+  <div class="chapter"><h2>How it works</h2><p>Three steps, the same ones the app walks you through when you open it.</p></div>
+  <section class="steps" aria-label="How it works">
+    <article class="step step--sage" style="--tilt:-1.2deg">
+      <span class="step__count">1 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40C6 20 20 8 42 6c0 20-10 34-34 34Z"/><path d="M10 38C20 28 28 20 36 12"/></svg></div>
+      <h3 class="step__title">Swap plastic for things that last</h3>
+      <p class="step__text">Every challenge is one small swap: a steel bottle instead of a plastic one, a bar of soap instead of a bottle of it. Nothing to buy to get started.</p>
+      <div class="step__dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    </article>
+    <article class="step step--sand" style="--tilt:1deg">
+      <span class="step__count">2 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="8" r="4.5"/><circle cx="10" cy="30" r="4.5"/><circle cx="38" cy="30" r="4.5"/><circle cx="24" cy="42" r="3"/><path d="M24 12.5V30M21 11 13 26M27 11l8 15"/></svg></div>
+      <h3 class="step__title">Grow your tree</h3>
+      <p class="step__text">Areas of your life sit on a tree: the kitchen, the bathroom, on the go. Open one and its challenges unlock, branch by branch, as you go.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i class="on"></i><i></i></div>
+    </article>
+    <article class="step step--sea" style="--tilt:-0.8deg">
+      <span class="step__count">3 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="36" height="36" rx="8"/><path d="m15 25 6 6 12-14"/></svg></div>
+      <h3 class="step__title">Count what you already do</h3>
+      <p class="step__text">Plenty of swaps are habits you already have. Tick them off and your progress shows you started further along than you thought.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i></i><i class="on"></i></div>
+    </article>
+  </section>
+  <div class="chapter"><h2>The three tabs</h2><p>The whole app is a bottom bar with three places to be.</p></div>
+  <section class="steps" aria-label="The three tabs">
+    <article class="step step--sage" style="--tilt:-1.2deg">
+      <span class="step__count">1 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="8" r="4.5"/><circle cx="10" cy="30" r="4.5"/><circle cx="38" cy="30" r="4.5"/><circle cx="24" cy="42" r="3"/><path d="M24 12.5V30M21 11 13 26M27 11l8 15"/></svg></div>
+      <h3 class="step__title">Tree</h3>
+      <p class="step__text">The home screen: a floating tree of bubbles over a forest photo. Drag around, tap a bubble to open an area, unlock the next tier.</p>
+      <div class="step__dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    </article>
+    <article class="step step--sand" style="--tilt:1deg">
+      <span class="step__count">2 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="12" width="26" height="32" rx="5" transform="rotate(-8 22 28)"/><rect x="16" y="6" width="26" height="32" rx="5" transform="rotate(8 29 22)"/></svg></div>
+      <h3 class="step__title">QuickSwipe</h3>
+      <p class="step__text">A stack of cards for fast decisions. Swipe right to mark a swap as done, left to leave it on your to-do list. A minute is enough.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i class="on"></i><i></i></div>
+    </article>
+    <article class="step step--sea" style="--tilt:-0.8deg">
+      <span class="step__count">3 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40V8M8 40h34"/><path d="M15 32l9-9 7 6 10-15"/></svg></div>
+      <h3 class="step__title">Progress</h3>
+      <p class="step__text">One place to see the totals: swaps ticked per area, what’s left, and a summary you can choose to share with friends.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i></i><i class="on"></i></div>
+    </article>
+  </section>
+  <div class="chapter"><h2>Under the hood</h2><p>What it’s made of, and why.</p></div>
+  <section class="steps" aria-label="Under the hood">
+    <article class="step step--sage" style="--tilt:-1.2deg">
+      <span class="step__count">1 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5 42 14v20L24 43 6 34V14Z"/><path d="M6 14l18 9 18-9M24 23v20"/></svg></div>
+      <h3 class="step__title">One codebase, two platforms</h3>
+      <p class="step__text">Flutter and Dart run the same app on iPhone and in the browser. The data layer talks to a small storage interface, so files on the phone and browser storage are swappable.</p>
+      <div class="step__dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    </article>
+    <article class="step step--sand" style="--tilt:1deg">
+      <span class="step__count">2 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 36a9 9 0 0 1-1-17.9A12 12 0 0 1 36 16a10 10 0 0 1 0 20Z"/></svg></div>
+      <h3 class="step__title">Firebase, kept small</h3>
+      <p class="step__text">Email sign-in and a single Firestore document per person, with rules that let you read and write only your own. Without an account, everything stays on your device.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i class="on"></i><i></i></div>
+    </article>
+    <article class="step step--sea" style="--tilt:-0.8deg">
+      <span class="step__count">3 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5 8 11v13c0 10 7 17 16 20 9-3 16-10 16-20V11Z"/><path d="m17 24 5 5 9-10"/></svg></div>
+      <h3 class="step__title">Built to be trusted</h3>
+      <p class="step__text">39 tests cover saving, loading, import/export and restore. Writes are atomic, so a crash mid-save can’t corrupt your progress.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i></i><i class="on"></i></div>
+    </article>
+  </section>
+  <div class="chapter"><h2>What I learned</h2><p>The parts that took more than a first try.</p></div>
+  <section class="steps" aria-label="What I learned">
+    <article class="step step--sage" style="--tilt:-1.2deg">
+      <span class="step__count">1 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M30 6a11 11 0 0 0-9 15L6 36a4 4 0 0 0 6 6l15-15A11 11 0 0 0 42 18l-7 7-6-2-2-6Z"/></svg></div>
+      <h3 class="step__title">Make it feel instant</h3>
+      <p class="step__text">The first frames used to flash white, then black, before the app appeared. A matching native launch screen and waiting for the background photo to decode removed that.</p>
+      <div class="step__dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    </article>
+    <article class="step step--sand" style="--tilt:1deg">
+      <span class="step__count">2 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><path d="M6 24h36M24 6c-9 10-9 26 0 36M24 6c9 10 9 26 0 36"/></svg></div>
+      <h3 class="step__title">Going to the web is a design job</h3>
+      <p class="step__text">The app was phone-shaped. Putting it in a browser meant rethinking storage, centring the tree for any screen size and switching off what a tab can’t do, like daily reminders.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i class="on"></i><i></i></div>
+    </article>
+    <article class="step step--sea" style="--tilt:-0.8deg">
+      <span class="step__count">3 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 44V6M10 8h26l-6 9 6 9H10"/></svg></div>
+      <h3 class="step__title">What’s next</h3>
+      <p class="step__text">Syncing progress between phone and browser, a layout that uses wide screens properly, and more challenges from the people using it.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i></i><i class="on"></i></div>
+    </article>
+  </section>
+
+  <nav class="pager" aria-label="Other projects">
+    <a class="prev" href="index.html#projects"><small>← Back</small><strong>All projects</strong></a>
+    <a class="next" href="ocean-health.html"><small>Next project →</small><strong>Ocean Health</strong></a>
+  </nav>
+</main>
+
+<footer class="foot">
+  <p>© 2026 Thomas Pennock</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

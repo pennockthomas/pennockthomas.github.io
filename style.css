@@ -282,3 +282,168 @@ a { color: inherit; }
   .hero__art .blades, .hero__art .tree, .hero__art .sun { animation: none; }
   .btn, .bar__menu span { transition: none; }
 }
+
+/* ---------- Project pages: intro-style steps ---------- */
+.proj-hero {
+  padding: calc(var(--bar) + 8vh) 20px 6vh;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.proj-hero__kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-bottom: 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent, var(--sage));
+}
+.proj-hero__kicker .pill { letter-spacing: 0.04em; }
+.proj-hero__title {
+  font-size: clamp(3.4rem, 17vw, 9rem);
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+.proj-hero__lede {
+  margin-top: 24px;
+  max-width: 30ch;
+  font-size: clamp(1.2rem, 3.8vw, 1.9rem);
+  line-height: 1.28;
+}
+.proj-hero .tags { margin-top: 26px; }
+.proj-hero .card__actions { margin-top: 28px; }
+.proj-hero .btn:hover { background: var(--cream); color: var(--pine-deep); }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px 8vh;
+}
+.fact {
+  padding: 16px 16px 14px;
+  border: 2px dashed rgb(242 233 211 / 0.35);
+  border-radius: 6px;
+}
+.fact b {
+  display: block;
+  font-size: clamp(2rem, 7vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent, var(--sage));
+}
+.fact span { font-size: 0.9rem; }
+
+.steps { padding: 2vh 16px 10vh; display: grid; gap: 28px; }
+.step {
+  --bg: var(--sand);
+  position: relative;
+  width: min(100%, 640px);
+  margin: 0 auto;
+  padding: clamp(28px, 6vw, 48px) clamp(22px, 5vw, 44px) clamp(30px, 6vw, 46px);
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  color: var(--ink);
+  background: var(--bg);
+  border-radius: 14px 40px 14px 40px;
+  transform: rotate(var(--tilt, 0deg));
+  box-shadow: 0 2px 0 rgb(0 0 0 / 0.2), 0 24px 46px rgb(0 0 0 / 0.38);
+  isolation: isolate;
+}
+.step::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: url("assets/grain.png");
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+.step > * { position: relative; z-index: 1; }
+.step--sage { --bg: var(--sage); }
+.step--sea { --bg: var(--sea); }
+.step--coral { --bg: var(--coral); }
+
+.step__count {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.step__medal {
+  display: grid;
+  place-items: center;
+  width: clamp(92px, 24vw, 120px);
+  aspect-ratio: 1;
+  margin: 20px 0 22px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.28);
+}
+.step__medal svg { width: 52%; height: auto; }
+.step__title {
+  font-size: clamp(1.7rem, 6vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.step__text { margin-top: 14px; max-width: 38ch; font-size: clamp(1rem, 2.6vw, 1.12rem); }
+.step__dots { display: flex; gap: 8px; margin-top: 26px; }
+.step__dots i {
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+}
+.step__dots i.on { background: var(--ink); }
+
+/* Section heading between step groups */
+.chapter {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 6vh 4px 0;
+}
+.chapter h2 {
+  font-size: clamp(2rem, 8vw, 3.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+.chapter p { margin-top: 10px; max-width: 40ch; color: var(--sage); }
+
+/* Next / previous project */
+.pager {
+  display: grid;
+  gap: 12px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 4vh 20px 8vh;
+}
+@media (min-width: 640px) { .pager { grid-template-columns: 1fr 1fr; } }
+.pager a {
+  display: grid;
+  gap: 4px;
+  padding: 18px 20px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.pager a:hover { background: var(--cream); color: var(--pine-deep); }
+.pager small { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.pager strong { font-size: clamp(1.5rem, 5vw, 2rem); letter-spacing: -0.03em; text-transform: uppercase; }
+.pager .next { text-align: right; }
+
+body.page-sea { --accent: var(--sea); }
+body.page-sage { --accent: var(--sage); }

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ocean Health — Thomas Pennock</title>
+  <meta name="description" content="Ocean Health: a 3D digital twin of a coastline and offshore wind farm, built with Flutter, Flame and Three.js.">
+  <meta name="theme-color" content="#142A24">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-sea">
+
+<header class="bar">
+  <a class="bar__brand" href="index.html">T.P. ’26</a>
+  <button class="bar__menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span>
+  </button>
+  <a class="btn btn--bar" href="index.html#say-hi">Contact</a>
+</header>
+
+<nav id="menu" class="menu" hidden aria-label="Main">
+  <a href="index.html">Home</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="index.html#say-hi">Say hi</a>
+</nav>
+
+<main>
+  <section class="proj-hero">
+    <p class="proj-hero__kicker"><span>02 · 3D app · iOS, macOS &amp; web</span><span class="pill">In progress</span></p>
+    <h1 class="proj-hero__title">Ocean<br>Health</h1>
+    <p class="proj-hero__lede">A coastline you can orbit, zoom into and dive beneath.</p>
+    <ul class="tags"><li>Flutter</li><li>Flame</li><li>Three.js</li><li>Shaders</li><li>3D</li></ul>
+    <div class="card__actions"><a class="btn" href="https://ocean-health-vo.web.app" target="_blank" rel="noopener">Open the app</a></div>
+  </section>
+
+  <div class="facts">
+    <div class="fact"><b>3D</b><span>island built from hexagon tiles</span></div>
+    <div class="fact"><b>4</b><span>guided intro pages</span></div>
+    <div class="fact"><b>3</b><span>platforms: iOS, macOS, web</span></div>
+  </div>
+
+  <div class="chapter"><h2>The tour</h2><p>The app opens with a short guided walk-through, like this one.</p></div>
+  <section class="steps" aria-label="The tour">
+    <article class="step step--sage" style="--tilt:-1.2deg">
+      <span class="step__count">1 / 4</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><path d="M6 24h36M24 6c-9 10-9 26 0 36M24 6c9 10 9 26 0 36"/></svg></div>
+      <h3 class="step__title">Welcome</h3>
+      <p class="step__text">An interactive map of Ocean Health innovations: nature-based solutions that can be added to marine projects, and where they fit.</p>
+      <div class="step__dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+    </article>
+    <article class="step step--sand" style="--tilt:1deg">
+      <span class="step__count">2 / 4</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4 41 14v20L24 44 7 34V14Z"/><path d="M24 4v10M41 14l-9 5M7 14l9 5"/></svg></div>
+      <h3 class="step__title">Explore the island</h3>
+      <p class="step__text">Tap a glowing ring to open a project area and see which innovations belong there. Drag to rotate the view, pinch or scroll to zoom.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i class="on"></i><i></i><i></i></div>
+    </article>
+    <article class="step step--sea" style="--tilt:-0.8deg">
+      <span class="step__count">3 / 4</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c5-6 9-6 14 0s9 6 14 0 9-6 12-2M4 30c5-6 9-6 14 0s9 6 14 0 9-6 12-2M4 42c5-6 9-6 14 0s9 6 14 0 9-6 12-2"/></svg></div>
+      <h3 class="step__title">Look underwater</h3>
+      <p class="step__text">Some areas have a dive button. It takes the camera below the waterline to show what happens on the seabed.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i></div>
+    </article>
+    <article class="step step--coral" style="--tilt:1.3deg">
+      <span class="step__count">4 / 4</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 33c0-4-7-6-7-14a14 14 0 0 1 28 0c0 8-7 10-7 14Z"/><path d="M18 40h12M20 45h8"/></svg></div>
+      <h3 class="step__title">Innovations</h3>
+      <p class="step__text">Every solution in one list: when to use it in a tender, the evidence behind it, and who to contact.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i></i><i></i><i class="on"></i></div>
+    </article>
+  </section>
+  <div class="chapter"><h2>Under the hood</h2><p>A 3D scene is the part Flutter can’t do alone.</p></div>
+  <section class="steps" aria-label="Under the hood">
+    <article class="step step--sage" style="--tilt:-1.2deg">
+      <span class="step__count">1 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5 42 14v20L24 43 6 34V14Z"/><path d="M6 14l18 9 18-9M24 23v20"/></svg></div>
+      <h3 class="step__title">Flutter shell, Three.js scene</h3>
+      <p class="step__text">The interface and navigation are Flutter. The 3D island is Three.js, shown in a web view on iOS and macOS and in an iframe on the web. The land itself is hexagon tiles over a heightmap.</p>
+      <div class="step__dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    </article>
+    <article class="step step--sand" style="--tilt:1deg">
+      <span class="step__count">2 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c5-6 9-6 14 0s9 6 14 0 9-6 12-2M4 30c5-6 9-6 14 0s9 6 14 0 9-6 12-2M4 42c5-6 9-6 14 0s9 6 14 0 9-6 12-2"/></svg></div>
+      <h3 class="step__title">Water that moves like water</h3>
+      <p class="step__text">The sea is drawn with Gerstner waves: several moving swells added together in a shader, so it has a believable rhythm without a heavy simulation.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i class="on"></i><i></i></div>
+    </article>
+    <article class="step step--sea" style="--tilt:-0.8deg">
+      <span class="step__count">3 / 3</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="20" r="3"/><path d="M24 17V4M26.6 21.5 38 28M21.4 21.5 10 28M24 23v21"/></svg></div>
+      <h3 class="step__title">Wind farm and models</h3>
+      <p class="step__text">The island carries a wind farm and a dredger, a real 3D model, so the work looks like the work it stands for.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i></i><i class="on"></i></div>
+    </article>
+  </section>
+  <div class="chapter"><h2>What I learned</h2><p>And what is still in progress.</p></div>
+  <section class="steps" aria-label="What I learned">
+    <article class="step step--sage" style="--tilt:-1.2deg">
+      <span class="step__count">1 / 2</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M30 6a11 11 0 0 0-9 15L6 36a4 4 0 0 0 6 6l15-15A11 11 0 0 0 42 18l-7 7-6-2-2-6Z"/></svg></div>
+      <h3 class="step__title">Two worlds, one app</h3>
+      <p class="step__text">Keeping a web view and Flutter talking cleanly, with messages both ways, took more design than any of the rendering.</p>
+      <div class="step__dots" aria-hidden="true"><i class="on"></i><i></i></div>
+    </article>
+    <article class="step step--sand" style="--tilt:1deg">
+      <span class="step__count">2 / 2</span>
+      <div class="step__medal"><svg viewBox="0 0 48 48" fill="none" stroke="#14231F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 44V6M10 8h26l-6 9 6 9H10"/></svg></div>
+      <h3 class="step__title">What’s next</h3>
+      <p class="step__text">More project areas, more content in the innovations library, and tuning the scene so it runs smoothly on older phones.</p>
+      <div class="step__dots" aria-hidden="true"><i></i><i class="on"></i></div>
+    </article>
+  </section>
+
+  <nav class="pager" aria-label="Other projects">
+    <a class="prev" href="ecosteps.html"><small>← Previous project</small><strong>EcoSteps</strong></a>
+    <a class="next" href="index.html#projects"><small>Back →</small><strong>All projects</strong></a>
+  </nav>
+</main>
+
+<footer class="foot">
+  <p>© 2026 Thomas Pennock</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
